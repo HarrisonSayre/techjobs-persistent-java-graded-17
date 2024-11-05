@@ -9,10 +9,15 @@ import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
 
+@MappedSuperclass
 public abstract class AbstractEntity {
 
+    @Id
+    @GeneratedValue
     private int id;
 
+    @NotNull //Look up diff between @NotNull and @NotBlank
+    @Size(max = 125)
     private String name;
 
     public int getId() {
