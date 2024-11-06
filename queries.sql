@@ -7,6 +7,9 @@
 
 --Part 2
 
+--WRONG! FIX/DO
+select name from employer where location = "St. Louis City";
+
 --Part 3
 
 --Part 4

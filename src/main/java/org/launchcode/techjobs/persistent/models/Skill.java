@@ -8,7 +8,7 @@ import jakarta.validation.constraints.Size;
 public class Skill extends AbstractEntity {
 
     @NotNull
-    @Size(max=200)
+    @Size(max=100, min = 1)
     String description;
 
     public Skill(){}

@@ -17,7 +17,7 @@ public abstract class AbstractEntity {
     private int id;
 
     @NotNull //Look up diff between @NotNull and @NotBlank
-    @Size(max = 125)
+    @Size(max = 100, min = 1)
     private String name;
 
     public int getId() {
