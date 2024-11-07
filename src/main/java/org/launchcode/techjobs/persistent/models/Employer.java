@@ -20,10 +20,10 @@ public class Employer extends AbstractEntity {
         this.location = location;
     }
 
-    //TODO. COME BACK TO THIS AND ADD THE RIGHT ANNOTATIONS.
-    @OneToMany(mappedBy = "employer")
+    //Passes tests. Hope it's right? HIBERNATE ERROR?
+    @OneToMany//(mappedBy = "employer")
     @JoinColumn(name="employer_id")
-    private final List<Job> jobs = new ArrayList<>(); //It needs to be a List that's an ArrayList? Why?
+    private final List<Job> jobs = new ArrayList<>();
 
         @NotNull
         @Size(max = 75, min =1)
