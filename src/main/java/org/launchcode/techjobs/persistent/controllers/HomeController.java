@@ -38,6 +38,8 @@ public class HomeController {
 
         model.addAttribute("title", "MyJobs");
 
+        model.addAttribute("jobs", jobRepository.findAll());
+
         return "index";
     }
 
@@ -48,12 +50,10 @@ public class HomeController {
         //DO DATA HERE??
         model.addAttribute("employers", employerRepository.findAll());
 
-        //TODO FIGURE OUT IF THIS IS CORRECT
         model.addAttribute("skills", skillRepository.findAll());
         return "add";
     }
 
-    //TODO MAKE SURE THIS ALL WORKS
     @PostMapping("add")
     public String processAddJobForm(@ModelAttribute @Valid Job newJob,
                                        Errors errors, Model model, @RequestParam int employerId, @RequestParam List<Integer> skills) {
@@ -78,7 +78,6 @@ public class HomeController {
         //IS THIS EVEN WHAT I'm SUPPOSED TO BE DOING WITH THIS???
         Optional<Employer> result = employerRepository.findById(employerId);
 
-        //TODO FIGURE OUT IF THIS CHECK WILL LET ME PASS TEST
         if(result.isPresent()) {
             Employer newJobEmployer = result.get();
             newJob.setEmployer(newJobEmployer);
